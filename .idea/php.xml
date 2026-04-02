@@ -1,113 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="ChangeListManager">
-    <list default="true" id="96bb7d83-831c-4fe3-94f1-6afc9b8a08f1" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.styleci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Console/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Exceptions/Handler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Middleware/Authenticate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Middleware/TrustHosts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Models/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Providers/AuthServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Providers/EventServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app/Providers/RouteServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/broadcasting.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/cache.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/cors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/filesystems.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/hashing.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/logging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/mail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/queue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/services.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/config/view.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/database/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/database/seeders/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/public/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/public/web.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/resources/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/resources/lang/en/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/resources/lang/en/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/resources/lang/en/passwords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/resources/lang/en/validation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/routes/api.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/routes/channels.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/routes/console.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/server.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/app/public/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/framework/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/framework/cache/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/framework/sessions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/framework/testing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/storage/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/tests/CreatesApplication.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/webpack.mix.js" beforeDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="ComposerConfigs">
-    <option name="configs">
-      <option value="$PROJECT_DIR$/website/composer.json" />
-    </option>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\softwares\phpstudy_pro\Extensions\php\php8.2.9nts\php.exe">
+  <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/psr/clock" />
@@ -321,58 +224,19 @@
       <path value="$PROJECT_DIR$/website/vendor/composer" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
-  <component name="ProjectId" id="3BknDOCvvhzJygQ8kVmG8ed1kfX" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;AAA&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RunManager">
-    <configuration name="主" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="website" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner configuration_file="$PROJECT_DIR$/website/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
-      <method v="2" />
-    </configuration>
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.18968.24" />
-        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.18968.24" />
-      </set>
-    </attachedChunks>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/website/phpunit.xml" custom_loader_path="$PROJECT_DIR$/website/vendor/autoload.php" use_configuration_file="true" />
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="默认任务">
-      <changelist id="96bb7d83-831c-4fe3-94f1-6afc9b8a08f1" name="更改" comment="" />
-      <created>1775041815275</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1775041815275</updated>
-      <workItem from="1775041816284" duration="5533000" />
-      <workItem from="1775053072071" duration="954000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
 </project>
