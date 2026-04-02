@@ -1,12 +1,72 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
+# ==============================================
+# 1. IDE 相关配置文件（核心：忽略 .idea 整个目录）
+# ==============================================
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea/modules.xml
+.idea/vcs.xml
+.idea/dictionaries
+.idea/libraries
+.idea/misc.xml
+.idea/sonarlint/
+.idea/php.xml
+.idea/workspace.xml
+
+# ==============================================
+# 2. PHP 项目运行时生成的文件
+# ==============================================
+# Composer 依赖（vendor 目录不需要上传，本地 composer install 即可生成）
+/vendor/
+# 本地环境配置文件（.env 包含数据库密码等敏感信息，绝对不能上传！）
 .env
-.env.backup
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+.env.local
+.env.*.local
+# 日志文件
+/storage/logs/*.log
+/storage/logs/*.log.*
+# 缓存文件
+/storage/cache/
+/bootstrap/cache/
+# 临时文件
+*.tmp
+*.temp
+# 编译文件
+*.php~
+# 单元测试覆盖率报告
+/coverage/
+# PHPStan/Psalm 等静态分析缓存
+.phpstan.cache
+.psalm.cache
+
+# ==============================================
+# 3. 系统生成的文件
+# ==============================================
+# Windows
+Thumbs.db
+.DS_Store
+# Linux
+*~
+.fuse_hidden*
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+# 日志文件
+*.log
+
+# ==============================================
+# 4. 其他开发环境文件
+# ==============================================
+# 本地开发服务器配置
+docker-compose.override.yml
+# 编辑器配置
+.vscode/
+# 包管理器锁文件（可选：composer.lock 建议上传，保证依赖版本一致）
+# /composer.lock
+# 节点依赖（如果有前端）
+/node_modules/
+# 打包产物
+/dist/
+/build/
