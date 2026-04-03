@@ -1,23 +1,27 @@
 <?php
 
-use Illuminate\Http\Request;
+// 路由文件：api.php
+// 作用：定义前端可以访问的接口地址
+// 成员2任务：实验室、部门、新闻 4个公共接口
+
+// 引入路由系统
 use Illuminate\Support\Facades\Route;
 
+// 引入公共控制器
+use App\Http\Controllers\PublicController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+// ======================
+// 成员2 公共接口路由
+// ======================
 
+// 1. 实验室信息接口 GET /api/lab
+Route::get('/lab', [PublicController::class, 'lab']);
 
+// 2. 部门列表接口 GET /api/departments
+Route::get('/departments', [PublicController::class, 'departments']);
 
+// 3. 新闻列表（分页）接口 GET /api/news
+Route::get('/news', [PublicController::class, 'news']);
 
-
-
-
+// 4. 新闻详情接口 GET /api/news/{id}
+Route::get('/news/{id}', [PublicController::class, 'newsDetail']);
