@@ -9,7 +9,7 @@ class LabInfoSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('lab_info')->insert([
+        DB::table('labs')->insert([
             [
                 'name' => '人工智能算法实验室',
                 'desc' => '聚焦计算机视觉、自然语言处理、推荐系统等方向的算法研究与落地，配备高性能GPU服务器集群，支撑公司核心算法研发',
