@@ -19,6 +19,7 @@ class CreateDepartmentsTable extends Migration
             $table->text('desc')->nullable();
             $table->json('tech_stack')->nullable();
             $table->boolean('status')->default(1);
+            $table->integer('sort')->default(0);  // 添加 sort 字段
             $table->timestamps();
         });
     }
