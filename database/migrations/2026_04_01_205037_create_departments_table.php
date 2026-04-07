@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use Illuminate\Support\Facades\DB;
 return new class extends Migration
 {
     public function up()
@@ -16,6 +16,7 @@ return new class extends Migration
             $table->tinyInteger('sort')->default(0)->comment('排序（数字越小越靠前）');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE `departments` COMMENT = '实验室部门表（存储各研发部门信息）'");
     }
 
     public function down()
