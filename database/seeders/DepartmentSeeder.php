@@ -15,7 +15,7 @@ class DepartmentSeeder extends Seeder
                 'name' => '算法部',
                 'desc' => '负责人工智能算法研发、数据分析与模型训练',
                 'tech_stack' => json_encode(['Python', 'TensorFlow', 'PyTorch']),
-                'sort' => 1,
+                //'sort' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
