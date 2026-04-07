@@ -9,6 +9,7 @@ class ConfigSeeder extends Seeder
 {
     public function run()
     {
+        DB::table('configs')->truncate();
         DB::table('configs')->insert([
             [
                 'key' => 'apply_switch',

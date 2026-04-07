@@ -11,6 +11,7 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
+        DB::table('users')->truncate();//清空表
         DB::table('users')->insert([
             [
                 'name' => '管理员',

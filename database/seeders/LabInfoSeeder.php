@@ -9,20 +9,24 @@ class LabInfoSeeder extends Seeder
 {
     public function run()
     {
+        // 清空labs表（迁移已将lab_info重命名为labs，字段同步为desc）
+        DB::table('labs')->truncate();
+
+        // 关键修正：将intro改为迁移表中的desc字段，匹配表结构
         DB::table('labs')->insert([
             [
-                'name' => '人工智能算法实验室',
-                'desc' => '聚焦计算机视觉、自然语言处理、推荐系统等方向的算法研究与落地，配备高性能GPU服务器集群，支撑公司核心算法研发',
-                'address' => '研发中心A栋5层501-508室',
-                'contact' => '李工 13800138000',
+                'name' => '人工智能实验室',
+                'desc' => '专注于机器学习、计算机视觉等方向的研究', // 替换intro为desc
+                'address' => '科研楼A座501',
+                'contact' => '张老师 13800138000',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => '软件工程实验室',
-                'desc' => '专注于软件架构设计、性能优化、自动化测试等方向，负责公司核心业务系统的技术攻坚与架构升级',
-                'address' => '研发中心B栋3层305-310室',
-                'contact' => '王工 13900139000',
+                'name' => '软件开发实验室',
+                'desc' => '专注于Web开发、移动端开发等工程化实践', // 替换intro为desc
+                'address' => '科研楼B座302',
+                'contact' => '李老师 13900139000',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

@@ -10,6 +10,8 @@ class NewsSeeder extends Seeder
 {
     public function run()
     {
+        DB::table('news')->truncate();
+        // 插入与 /api/news /api/news/{id} 接口匹配的新闻数据
         DB::table('news')->insert([
             [
                 'title' => '2026年技术部年度规划发布',

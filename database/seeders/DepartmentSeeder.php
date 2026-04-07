@@ -10,6 +10,8 @@ class DepartmentSeeder extends Seeder
 {
     public function run()
     {
+        DB::table('departments')->truncate();
+        // 插入与 /api/departments 接口匹配的部门数据
         DB::table('departments')->insert([
             [
                 'name' => '算法部',
