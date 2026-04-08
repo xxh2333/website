@@ -13,7 +13,7 @@ class NewsController extends Controller
     {
         $news = News::select("id","title","cover","created_at")
             ->orderBy("created_at","desc")
-            ->paginate(10);
+            ->paginate(10);//每页显示10条数据
 
         return $this->success($news);
     }
@@ -21,7 +21,7 @@ class NewsController extends Controller
     // 新闻详情
     public function show($id)
     {
-        $news = News::find($id);
+        $news = News::find($id);//根据id查询单条新闻
 
         if(!$news){
             return $this->error("新闻不存在",404);
