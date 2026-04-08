@@ -10,6 +10,7 @@ use App\Traits\ApiResponse;
 
 class Controller extends BaseController
 {
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;//请求授权；任务分发；请求参数效验
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     use ApiResponse;
 }
