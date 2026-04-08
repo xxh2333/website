@@ -20,7 +20,7 @@ class ApplicationController extends Controller
     use ApiResponseTrait;
 
     /**
-     * 1. 提交报名接口（组员2任务1）
+     * 1. 提交报名接口
      */
     public function store(StoreApplicationRequest $request)
     {
@@ -53,7 +53,7 @@ class ApplicationController extends Controller
     }
 
     /**
-     * 2. 查询报名状态接口（组员2任务2）
+     * 2. 查询报名状态接口
      */
     public function status(CheckApplicationStatusRequest $request)
     {
