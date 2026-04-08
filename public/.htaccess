@@ -5,16 +5,16 @@
 
     RewriteEngine On
 
-    # Handle Authorization Header
+    # 处理 Authorization 请求头
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Redirect Trailing Slashes If Not A Folder...
+    # 去除 URL 末尾的斜杠（避免重复内容）
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # Send Requests To Front Controller...
+    # 核心：把所有非文件/文件夹的请求，转发到 index.php（Laravel 入口）
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]

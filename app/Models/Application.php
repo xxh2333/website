@@ -34,6 +34,13 @@ class Application extends Model
         'updated_at' => 'datetime',
     ];
 
+
+    // ========== 新增这行：关联学员（User） ==========
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     // 关联部门
     public function department()
     {

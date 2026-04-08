@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Illuminate\Database\Eloquent\Collection; // 引入集合类
 use Illuminate\Http\JsonResponse;
 
 trait ApiResponse
@@ -9,18 +10,24 @@ trait ApiResponse
     /**
      * 统一成功返回格式
      *
-     * @param array<mixed> $data
+     * @param mixed $data 支持数组/Collection/null
      * @param string $msg
      * @param int $code
      * @return JsonResponse
      */
-    public function success(array $data = [], string $msg = '操作成功', int $code = 200): JsonResponse
+    public function success($data = [], string $msg = '操作成功', int $code = 200): JsonResponse
     {
+        // 关键：如果是集合，自动转数组
+        if ($data instanceof Collection) {
+            $data = $data->toArray();
+        }
+
+        // 关键：添加 JSON_UNESCAPED_UNICODE 解决中文乱码
         return response()->json([
             'code' => $code,
             'msg'  => $msg,
             'data' => $data
-        ]);
+        ], $code, [], JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -37,6 +44,6 @@ trait ApiResponse
             'code' => $code,
             'msg'  => $msg,
             'data' => $data
-        ]);
+        ], $code, [], JSON_UNESCAPED_UNICODE);
     }
 }
