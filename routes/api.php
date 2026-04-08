@@ -26,11 +26,10 @@ Route::get('/news/{id}', [PublicController::class, 'newsDetail']);
 // ======================
 // 报名接口（无需登录）
 // ======================
-Route::prefix('v1')->group(function () {
-    Route::post('/applications', [ApplicationController::class, 'store']);
-    Route::get('/applications/status', [ApplicationController::class, 'status']);
-    Route::get('/applications/registration-status', [ApplicationController::class, 'registrationStatus']);
-});
+
+Route::post('/applications', [ApplicationController::class, 'store']);
+Route::get('/applications/status', [ApplicationController::class, 'status']);
+Route::get('/applications/registration-status', [ApplicationController::class, 'registrationStatus']);
 
 // ======================
 // 管理员接口
