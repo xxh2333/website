@@ -13,6 +13,7 @@ return new class extends Migration
             $table->id()->comment('报名ID');
             $table->integer('user_id')->comment('关联用户ID');
             $table->integer('department_id')->comment('关联部门ID');
+            $table->string('name')->comment('学生姓名');
             $table->string('student_id', 20)->comment('学号');
             $table->text('resume')->comment('报名简历/自我介绍');
             $table->tinyInteger('status')->default(0)->comment('审核状态：0=待审核，1=通过，2=拒绝');

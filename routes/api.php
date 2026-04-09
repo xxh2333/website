@@ -70,15 +70,15 @@ Route::get('/faqs', [FaqController::class, 'index']);
 Route::get('/galleries', [GalleryController::class, 'index']);
 
 // 4. 简历上传（补充报名接口的缺失功能）
-Route::post('/v1/applications/upload-resume', [ApplyController::class, 'uploadResume']);
+Route::post('/applications/upload-resume', [ApplyController::class, 'uploadResume']);
 
 // 5. 学员中心（基于学号查询，无需登录的简易版）
-Route::get('/v1/trainee/dashboard', [TraineeController::class, 'dashboard']); // 个人信息+报名记录
-Route::post('/v1/trainee/profile', [TraineeController::class, 'updateProfile']); // 修改个人资料
-Route::get('/v1/trainee/application/{id}', [TraineeController::class, 'applicationStatus']); // 报名状态详情
+Route::get('/trainee/dashboard', [TraineeController::class, 'dashboard']); // 个人信息+报名记录
+Route::post('/trainee/profile', [TraineeController::class, 'updateProfile']); // 修改个人资料
+Route::get('/trainee/application/{id}', [TraineeController::class, 'applicationStatus']); // 报名状态详情
 
 // ------------ 后台管理接口（建议后续加登录中间件）------------
-Route::prefix('v1/admin')->group(function () {
+Route::prefix('admin')->group(function () {
     // 1. 系统配置管理
     Route::get('/configs', [ConfigController::class, 'index']); // 获取所有配置
     Route::put('/configs/{key}', [ConfigController::class, 'update']); // 修改配置值
