@@ -40,8 +40,11 @@ Route::post('admin/login', [AdminAuthController::class, 'login']);
 
 // 需要登录 + 管理员权限
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
+    //报名列表
     Route::get('admin/applications', [AdminApplicationController::class, 'index']);
+    //报名审核
     Route::put('admin/applications/{id}', [AdminApplicationController::class, 'update']);
+    //统计数据
     Route::get('admin/statistics', [AdminStatisticsController::class, 'index']);
 });
 
