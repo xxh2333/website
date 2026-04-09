@@ -21,6 +21,7 @@ class ApplicationSeeder extends Seeder
             [
                 'user_id' => 2, // 测试用户ID
                 'department_id' => $algorithmDeptId,
+                'name' => '张三',
                 'student_id' => '2025001',
                 'resume' => '/uploads/resumes/2025001.pdf',
                 'status' => 0, // 0=待审核
@@ -30,6 +31,7 @@ class ApplicationSeeder extends Seeder
             [
                 'user_id' => 2,
                 'department_id' => $frontendDeptId,
+                'name' => '李四',
                 'student_id' => '2025002',
                 'resume' => '/uploads/resumes/2025002.pdf',
                 'status' => 1, // 1=审核通过
