@@ -59,6 +59,7 @@ class ApplicationController extends Controller
                 'intro' => $request->intro,
                 'resume_path' => $resumePath,
                 'status' => '0',
+                'user_id' => null,
             ]);
 
             DB::commit();
@@ -119,9 +120,9 @@ class ApplicationController extends Controller
 
         // 状态映射
         $statusMap = [
-            'pending' => '待审核',
-            'approved' => '已通过',
-            'rejected' => '已拒绝'
+            '0' => '待审核',
+            '1' => '已通过',
+            '2' => '已拒绝'
         ];
 
         return response()->json([
