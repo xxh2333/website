@@ -80,20 +80,13 @@ class PublicController extends Controller
                 ->orderBy('id', 'desc')
                 ->paginate($limit, ['*'], 'page', $page);
 
-            // 格式化分页数据，符合接口定义
+            // 格式化分页数据，只保留前端需要的字段
             $data = [
                 'current_page' => $news->currentPage(),
                 'data' => $news->items(),
-                'first_page_url' => $news->url(1),
-                'from' => $news->firstItem(),
-                'last_page' => $news->lastPage(),
-                'last_page_url' => $news->url($news->lastPage()),
-                'links' => $news->linkCollection()->toArray(),
-                'next_page_url' => null,
-                'path' => $news->path(),
                 'per_page' => (int) $news->perPage(),
-                'prev_page_url' => null,
-                'to' => $news->lastItem(),
+                'prev_page_url' => $news->currentPage() > 1 ? $news->url($news->currentPage() - 1) : null,
+                'to' => $news->lastItem() ?? 0,
                 'total' => $news->total(),
             ];
 

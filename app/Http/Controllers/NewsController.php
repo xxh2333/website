@@ -8,7 +8,7 @@ class NewsController extends Controller
 {
     use ApiResponse;
 
-    // 新闻列表（已修复分页，前端可正常使用）
+    // 新闻列表
     public function index()
     {
         // 1. 查询新闻数据，每页10条，只取需要的字段
@@ -25,8 +25,8 @@ class NewsController extends Controller
             "meta" => [
                 "current_page" => $news->currentPage(),   // 当前页码
                 "per_page"     => $news->perPage(),       // 每页多少条
-                "total"        => $news->total(),         // 总条数（必须！）
-                "total_pages"  => $news->lastPage(),      // 总页数（必须！）
+                "total"        => $news->total(),         // 总条数
+                "total_pages"  => $news->lastPage(),      // 总页数
             ]
         ];
 
@@ -34,7 +34,7 @@ class NewsController extends Controller
         return $this->success($data);
     }
 
-    // 新闻详情（完全保留你原来的逻辑，只修正了语法）
+    // 新闻详情
     public function show($id)
     {
         $news = News::find($id);//根据id查询单条新闻
