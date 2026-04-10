@@ -16,6 +16,7 @@ class Application extends Model
         'name',
         'student_id',
         'department_id',
+        'user_id',
         'phone',
         'email',
         'intro',
