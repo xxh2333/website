@@ -20,14 +20,14 @@ class ApplicationController extends Controller
     public function store(StoreApplicationRequest $request)
     {
         // 1. 检查报名是否开放
-//        $isOpen = Setting::where('key', 'registration_open')->value('value');
-//        if ($isOpen !== 'true') {
-//            return response()->json([
-//                'code' => 403,
-//                'message' => '报名已关闭，暂不可提交',
-//                'data' => null
-//            ], 403);
-//        }
+        $isOpen = Setting::where('key', 'registration_open')->value('value');
+        if ($isOpen !== 'true') {
+            return response()->json([
+                'code' => 403,
+                'message' => '报名已关闭，暂不可提交',
+                'data' => null
+            ], 403);
+        }
 
         // 2. 处理文件上传
         $resumePath = null;
