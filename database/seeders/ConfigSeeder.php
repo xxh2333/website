@@ -18,6 +18,22 @@ class ConfigSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            // 👇 新增：报名开始时间
+            [
+                'key' => 'apply_start',
+                'value' => '2026-04-01 00:00:00',
+                'desc' => '报名开始时间',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // 👇 新增：报名结束时间
+            [
+                'key' => 'apply_end',
+                'value' => '2026-04-30 23:59:59',
+                'desc' => '报名结束时间',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
             [
                 'key' => 'lab_audit_days',
                 'value' => '3',

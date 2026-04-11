@@ -14,8 +14,14 @@ class ConfigController extends Controller
         $switch = Config::where('key', 'apply_switch')->value('value');
         $start = Config::where('key', 'apply_start')->value('value');
         $end = Config::where('key', 'apply_end')->value('value');
+
+        $now = now();
+
+        // 最终判断：开启 + 在时间范围内
+        $isOpen = ($switch == '1') && ($now >= $start) && ($now <= $end);
+
         return $this->success([
-            'is_open' => $switch == '1',
+            'is_open' => $isOpen,
             'start_time' => $start,
             'end_time' => $end
         ]);

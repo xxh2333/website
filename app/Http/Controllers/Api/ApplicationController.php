@@ -11,7 +11,7 @@ use App\Models\Department;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 class ApplicationController extends Controller
 {
     /**
@@ -20,8 +20,17 @@ class ApplicationController extends Controller
     public function store(StoreApplicationRequest $request)
     {
         // 1. 检查报名是否开放
-        $isOpen = Setting::where('key', 'registration_open')->value('value');
-        if ($isOpen !== 'true') {
+        $switch = \App\Models\Config::where('key', 'apply_switch')->value('value');
+        $start  = \App\Models\Config::where('key', 'apply_start')->value('value');
+        $end    = \App\Models\Config::where('key', 'apply_end')->value('value');
+
+        $now = Carbon::now();
+        $startTime = $start ? Carbon::parse($start) : Carbon::minValue();
+        $endTime   = $end ? Carbon::parse($end) : Carbon::maxValue();
+
+        $isOpen = ($switch == '1') && $now->between($startTime, $endTime);
+
+        if (!$isOpen) {
             return response()->json([
                 'code' => 403,
                 'message' => '报名已关闭，暂不可提交',
@@ -59,7 +68,7 @@ class ApplicationController extends Controller
                 'intro' => $request->intro,
                 'resume_path' => $resumePath,
                 'status' => '0',
-                'user_id' => null,
+                'user_id' => 0,
             ]);
 
             DB::commit();
@@ -151,14 +160,22 @@ class ApplicationController extends Controller
      */
     public function registrationStatus()
     {
-        $isOpen = Setting::where('key', 'registration_open')->value('value');
+        $switch = \App\Models\Config::where('key', 'apply_switch')->value('value');
+        $start  = \App\Models\Config::where('key', 'apply_start')->value('value');
+        $end    = \App\Models\Config::where('key', 'apply_end')->value('value');
+
+        $now = Carbon::now();
+        $startTime = $start ? Carbon::parse($start) : Carbon::minValue();
+        $endTime   = $end ? Carbon::parse($end) : Carbon::maxValue();
+
+        $isOpen = ($switch == '1') && $now->between($startTime, $endTime);
 
         return response()->json([
             'code' => 200,
             'message' => 'success',
             'data' => [
-                'is_open' => $isOpen === 'true',
-                'message' => $isOpen === 'true' ? '报名进行中' : '报名已关闭'
+                'is_open' => $isOpen,
+                'message' => $isOpen ? '报名已开启' : '报名已关闭'
             ]
         ]);
     }

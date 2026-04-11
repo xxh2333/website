@@ -9,32 +9,33 @@ class ApplicationSeeder extends Seeder
 {
     public function run()
     {
-        // 清空applications表，避免重复数据
         DB::table('applications')->truncate();
 
-        // 动态获取部门ID（避免固定ID导致外键报错）
-        $algorithmDeptId = DB::table('departments')->where('name', '算法部')->value('id');
-        $frontendDeptId = DB::table('departments')->where('name', '前端部')->value('id');
-
-        // 仅保留迁移表中存在的字段：user_id/department_id/student_id/resume/status + 时间字段
+        // 直接用固定ID，不再查询部门，避免找不到
         DB::table('applications')->insert([
             [
-                'user_id' => 2, // 测试用户ID
-                'department_id' => $algorithmDeptId,
+                'user_id' => 2,
+                'department_id' => 1, // 固定1
                 'name' => '张三',
                 'student_id' => '2025001',
-                'resume' => '/uploads/resumes/2025001.pdf',
-                'status' => 0, // 0=待审核
+                'phone' => '13800138000',
+                'email' => 'zhangsan@test.com',
+                'intro' => '自我介绍',
+                'resume_path' => '/uploads/resumes/2025001.pdf',
+                'status' => 0,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'user_id' => 2,
-                'department_id' => $frontendDeptId,
+                'department_id' => 2, // 固定2
                 'name' => '李四',
                 'student_id' => '2025002',
-                'resume' => '/uploads/resumes/2025002.pdf',
-                'status' => 1, // 1=审核通过
+                'phone' => '13900139000',
+                'email' => 'lisi@test.com',
+                'intro' => '自我介绍',
+                'resume_path' => '/uploads/resumes/2025002.pdf',
+                'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

@@ -60,7 +60,7 @@ use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TraineeController;
-use App\Http\Controllers\ApplyController;
+//use App\Http\Controllers\ApplyController;
 
 // ------------ 前台通用接口（无需登录）------------
 // 1. 系统配置：报名开关状态（给报名页用）
@@ -72,8 +72,6 @@ Route::get('/faqs', [FaqController::class, 'index']);
 // 3. 相册：前台展示的实验室相册列表
 Route::get('/galleries', [GalleryController::class, 'index']);
 
-// 4. 简历上传（补充报名接口的缺失功能）
-Route::post('/applications/upload-resume', [ApplyController::class, 'uploadResume']);
 
 // 5. 学员中心（基于学号查询，无需登录的简易版）
 Route::get('/trainee/dashboard', [TraineeController::class, 'dashboard']); // 个人信息+报名记录

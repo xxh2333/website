@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 // 引入请求验证
 use App\Http\Requests\StoreApplicationRequest;
 use App\Http\Requests\CheckApplicationStatusRequest;
@@ -10,6 +11,7 @@ use App\Http\Traits\ApiResponseTrait;
 
 // 引入模型
 use App\Models\Application;
+use App\Models\Config;
 
 // 文件上传
 use Illuminate\Support\Facades\Storage;
@@ -24,6 +26,22 @@ class ApplicationController extends Controller
      */
     public function store(StoreApplicationRequest $request)
     {
+        $switch = Config::where('key', 'apply_switch')->value('value');
+        $start = Config::where('key', 'apply_start')->value('value');
+        $end = Config::where('key', 'apply_end')->value('value');
+
+        // 用 Carbon 统一解析时间，删除冗余的 $now = now()
+        $now = Carbon::now();
+        $startTime = $start ? Carbon::parse($start) : Carbon::minValue();
+        $endTime = $end ? Carbon::parse($end) : Carbon::maxValue();
+
+        // 对比解析后的 Carbon 对象，而非原字符串
+        $isOpen = ($switch == '1') && $now->between($startTime, $endTime);
+
+        if (!$isOpen) {
+            return $this->error('报名尚未开放！');
+        }
+
         // 1. 获取所有合法数据
         $data = $request->validated();
 
@@ -69,5 +87,19 @@ class ApplicationController extends Controller
 
         // 查到了就返回
         return $this->success($info);
+    }
+
+
+    public function registrationStatus()
+    {
+        // 直接复用 ConfigController 的 applyStatus 方法，保证100%一致
+        $configController = new \App\Http\Controllers\ConfigController();
+        $response = $configController->applyStatus(request());
+        $data = json_decode($response->getContent(), true)['data'];
+
+        return $this->success([
+            'is_open' => $data['is_open'],
+            'message' => $data['is_open'] ? '报名已开启' : '报名已关闭'
+        ]);
     }
 }
