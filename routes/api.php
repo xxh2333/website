@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminApplicationController;
 use App\Http\Controllers\Admin\AdminStatisticsController;
 
+
 // ======================
 // 公共接口（任何人可访问）
 // ======================

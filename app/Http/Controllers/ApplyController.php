@@ -4,6 +4,7 @@ use App\Models\Config;
 use App\Models\Application;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ApplyController extends Controller
 {
