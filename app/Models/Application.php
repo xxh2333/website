@@ -26,6 +26,7 @@ class Application extends Model
         'review_comment',
         'reviewed_by',
         'reviewed_at',
+        'review_note',
     ];
 
 
