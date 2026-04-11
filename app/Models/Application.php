@@ -16,6 +16,7 @@ class Application extends Model
         'name',
         'student_id',
         'department_id',
+        'user_id',
         'phone',
         'email',
         'intro',
@@ -25,6 +26,7 @@ class Application extends Model
         'review_comment',
         'reviewed_by',
         'reviewed_at',
+        'review_note',
     ];
 
 

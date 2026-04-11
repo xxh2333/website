@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Application;
 use Illuminate\Http\Request;
 
 class AdminApplicationController extends Controller
@@ -15,7 +16,7 @@ class AdminApplicationController extends Controller
         $perPage = $request->input('perPage', 10);
         $keyword = $request->input('keyword','');
 
-        //构建查询：关联部门表，支持搜索
+        //构建查询：关联部门的表，支持搜索
         $query = \App\Models\Application::with('department');
 
         if ($keyword) {
@@ -42,7 +43,7 @@ class AdminApplicationController extends Controller
         // 校验参数
         $request->validate([
             'status' => 'required|in:0,1,2', // 0待审核,1通过,2拒绝
-            'review_note' => 'nullable|string'
+            'review_comment' => 'nullable|string'
         ]);
 
         // 查询报名记录
@@ -58,12 +59,31 @@ class AdminApplicationController extends Controller
         // 更新状态和审核意见
         $application->update([
             'status' => $request->status,
-            'review_note' => $request->review_note
+            'review_comment' => $request->review_note
         ]);
 
         return response()->json([
             'code' => 200,
             'message' => '审核成功',
+            'data' => $application
+        ]);
+    }
+
+    public function show(string $id)
+    {
+        $application = Application::with('department')->find($id);
+
+        if (!$application) {
+            return response()->json([
+                'code' => 404,
+                'message' => '报名记录不存在',
+                'data' => null
+            ]);
+        }
+
+        return response()->json([
+            'code' => 200,
+            'message' => '获取成功',
             'data' => $application
         ]);
     }

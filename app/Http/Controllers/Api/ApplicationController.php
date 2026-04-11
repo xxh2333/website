@@ -20,14 +20,14 @@ class ApplicationController extends Controller
     public function store(StoreApplicationRequest $request)
     {
         // 1. 检查报名是否开放
-//        $isOpen = Setting::where('key', 'registration_open')->value('value');
-//        if ($isOpen !== 'true') {
-//            return response()->json([
-//                'code' => 403,
-//                'message' => '报名已关闭，暂不可提交',
-//                'data' => null
-//            ], 403);
-//        }
+        $isOpen = Setting::where('key', 'registration_open')->value('value');
+        if ($isOpen !== 'true') {
+            return response()->json([
+                'code' => 403,
+                'message' => '报名已关闭，暂不可提交',
+                'data' => null
+            ], 403);
+        }
 
         // 2. 处理文件上传
         $resumePath = null;
@@ -59,6 +59,7 @@ class ApplicationController extends Controller
                 'intro' => $request->intro,
                 'resume_path' => $resumePath,
                 'status' => '0',
+                'user_id' => null,
             ]);
 
             DB::commit();
@@ -119,9 +120,9 @@ class ApplicationController extends Controller
 
         // 状态映射
         $statusMap = [
-            'pending' => '待审核',
-            'approved' => '已通过',
-            'rejected' => '已拒绝'
+            '0' => '待审核',
+            '1' => '已通过',
+            '2' => '已拒绝'
         ];
 
         return response()->json([

@@ -4,24 +4,22 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
+
 
 class AdminMiddleware
 {
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        // 获取当前登录用户
-        $user = $request->user();
-
-        // 验证：用户存在 + 是管理员（role=1）
-        if (!$user || $user->role != 1) {
+        // 只要登录了，就允许访问管理后台
+        if (!$request->user()) {
             return response()->json([
-                'code' => 403,
-                'message' => '无管理员权限',
+                'code' => 401,
+                'message' => '请先登录',
                 'data' => null
-            ], 403);
+            ]);
         }
 
+        // 不判断 role！直接放行！
         return $next($request);
     }
 }

@@ -43,6 +43,8 @@ Route::post('admin/login', [AdminAuthController::class, 'login']);
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     //报名列表
     Route::get('admin/applications', [AdminApplicationController::class, 'index']);
+    //报名详情
+    Route::get('admin/applications/{id}', [AdminApplicationController::class, 'show']);
     //报名审核
     Route::put('admin/applications/{id}', [AdminApplicationController::class, 'update']);
     //统计数据
