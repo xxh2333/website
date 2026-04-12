@@ -32,7 +32,7 @@ class PublicController extends Controller
     {
         try {
             // 获取第一条实验室信息（后台只需要一条）
-            $lab = Lab::where('status', 1)->first();
+            $lab = Lab::first();
 
             // 如果没有数据，返回错误
             if (!$lab) {
@@ -112,7 +112,7 @@ class PublicController extends Controller
             }
 
             // 浏览量 +1
-            $news->increment('views');
+            $news->increment('view_count');
 
             // 返回新闻详情
             return $this->success($news);

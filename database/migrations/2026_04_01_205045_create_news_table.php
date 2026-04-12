@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('author', 30)->nullable()->comment('作者');
             $table->tinyInteger('is_top')->default(0)->comment('是否置顶：0=否，1=是');
             $table->integer('view_count')->default(0)->comment('阅读量');
+            $table->tinyInteger('status')->default(1)->comment('状态：1=显示 0=隐藏');
             $table->timestamps();
         });
     }
